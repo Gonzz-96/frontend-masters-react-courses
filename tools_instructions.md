@@ -54,3 +54,10 @@ To run prettier every time I hit `save`:
 - Add another script to package.json: `"lint": "eslint \"src/**/*.{js,jsx}\" --quiet"`
 
 DON'T FORGET TO ENABLE ESLINT IN VSCODE!
+
+## Installing Parcel
+
+- Run the command: `npm install -D parcel-bundler`
+- Create a new script: `"dev": "parcel src/index.html"`
+
+Parcell will figure everything out for us!
