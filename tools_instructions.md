@@ -65,3 +65,5 @@ Parcell will figure everything out for us!
 ## Install React and ReactDOM
 
 - Run the command: `npm i react react-dom`
+
+Note: Babel is built-in into Parcel. :)
