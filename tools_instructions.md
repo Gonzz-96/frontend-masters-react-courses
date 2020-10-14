@@ -61,3 +61,7 @@ DON'T FORGET TO ENABLE ESLINT IN VSCODE!
 - Create a new script: `"dev": "parcel src/index.html"`
 
 Parcell will figure everything out for us!
+
+## Install React and ReactDOM
+
+- Run the command: `npm i react react-dom`
