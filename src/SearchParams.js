@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 const SearchParams = () => {
+  // Hooks never go inside of if statements nor for loops
+  // nor while or anything like that.
   const [location, setLocation] = useState('Seattle, WA');
 
   return (
