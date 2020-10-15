@@ -6,6 +6,8 @@ const SearchParams = () => {
   // nor while or anything like that.
   const [location, setLocation] = useState('Seattle, WA');
   const [animal, setAnimal] = useState('dog');
+  const [breed, setBreed] = useState('');
+  const [breeds, setBreeds] = useState([]);
 
   return (
     <div className="search-params">
@@ -19,6 +21,7 @@ const SearchParams = () => {
             onChange={(event) => setLocation(event.target.value)}
           />
         </label>
+
         <label htmlFor="animal">
           Animal
           <select
@@ -35,6 +38,25 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
+
+        <label htmlFor="breed">
+          Breed
+          <select
+            id="breed"
+            value={breed}
+            onChange={(e) => setBreed(e.target.value)}
+            onBlur={(e) => setBreed(e.target.value)}
+            disabled={breeds.length === 0}
+          >
+            <option>All</option>
+            {breeds.map((breedString) => (
+              <option key={breedString} value={breedString}>
+                {breedString}
+              </option>
+            ))}
+          </select>
+        </label>
+
         <button>Submit</button>
       </form>
     </div>
