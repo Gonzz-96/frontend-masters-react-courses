@@ -13,15 +13,29 @@ const SearchParams = () => {
   // this hook will schedule the function and it
   // will run it once the component is totally rendered
   // This does not happen immediately
-  useEffect(() => {
-    setBreeds([]);
-    setBreed('');
+  useEffect(
+    () => {
+      setBreeds([]);
+      setBreed('');
 
-    pet.breeds(animal).then(({ breeds }) => {
-      const breedStrings = breeds.map(({ name }) => name);
-      setBreeds(breedStrings);
-    }, console.error);
-  }, [animal, setBreed, setBreeds]);
+      pet.breeds(animal).then(({ breeds: apiBreeds }) => {
+        const breedStrings = apiBreeds.map(({ name }) => name);
+        setBreeds(breedStrings);
+      }, console.error);
+    },
+    // useEffect hook will run only once if it has
+    // an empty array as dependency (because it doesn't
+    // depend on nothing, there's nothin that may change:
+    //
+    //  useEffect(() => {}, [])
+    //
+    // To run the hook every single time something updates,
+    // remove the array parameter (pass in only the lambda)
+    //
+    //  useEffect(() => {})
+    //
+    [animal, setBreed, setBreeds]
+  );
 
   return (
     <div className="search-params">
