@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import SearchParams from './SearchParams';
-import { Router } from '@reach/router';
+import { Link, Router } from '@reach/router';
 import Details from './Details';
 
 // <React.StringMode> will restrict the use
@@ -10,7 +10,9 @@ import Details from './Details';
 // specific route.
 const App = () => (
   <div>
-    <h1 id="something-important">Adopt Me</h1>
+    <header>
+      <Link to="/">Adopt Me</Link>
+    </header>
     <Router>
       <SearchParams path="/" />
       <Details path="/details/:id" />
