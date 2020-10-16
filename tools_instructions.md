@@ -157,3 +157,11 @@ Add a new version of the `.eslintrc.json` file:
 
 - Run the command: `npm install -D cross-env`
 - Add this line to the `package.json` file: `"dev:mock": "cross-env PET_MOCK=mock npm run dev"`
+
+## Adding Reach Router
+
+There are like 3 options of routers for react: `React Router`, `Reach Router` and `NaVi Router`.
+
+We are going to use `Reach Router` beacuse it handles a lot of accessibility issues for us (unlike `React Router` that doesn't help at all). :)
+
+- Install
