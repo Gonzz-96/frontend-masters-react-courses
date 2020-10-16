@@ -3,12 +3,8 @@ import pet from '@frontendmasters/pet';
 
 // Hooks cannot be used in class components
 class Details extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: true,
-    };
-  }
+
+  state = { loading: true };
 
   // similar to useEffect
   // run when first start upp

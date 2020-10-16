@@ -164,4 +164,8 @@ There are like 3 options of routers for react: `React Router`, `Reach Router` an
 
 We are going to use `Reach Router` beacuse it handles a lot of accessibility issues for us (unlike `React Router` that doesn't help at all). :)
 
-- Install
+- Install reach router: `@reach/router`
+
+## Configure experimental features with Babel
+
+- Run the command: `npm install -D babel-eslint @babel/core @babel/preset-env @babel/plugin-proposal-class-properties @babel/preset-react`
