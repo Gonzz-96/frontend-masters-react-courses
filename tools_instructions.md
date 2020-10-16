@@ -152,3 +152,8 @@ Add a new version of the `.eslintrc.json` file:
   }
 }
 ```
+
+## Make application offline.
+
+- Run the command: `npm install -D cross-env`
+- Add this line to the `package.json` file: `"dev:mock": "cross-env PET_MOCK=mock npm run dev"`
