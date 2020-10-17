@@ -3,6 +3,8 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from '@reach/router';
 
+// error boundaries are not possible with hooks
+// they always need to be a class cpomonents.
 class ErrorBoundary extends Component {
   state = {
     hasError: false,
