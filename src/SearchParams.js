@@ -12,7 +12,7 @@ const SearchParams = () => {
   const [animal, AnimalDropdown] = useDropdown('Animal', 'dog', ANIMALS);
   const [breed, BreedDropdown, setBreed] = useDropdown('Breed', '', breeds);
   const [pets, setPets] = useState([]);
-  const [theme, setTheme] = useContext(ThemeContext);
+  const [theme] = useContext(ThemeContext);
 
   async function requestPets() {
     const { animals } = await pet.animals({
@@ -35,6 +35,7 @@ const SearchParams = () => {
       pet.breeds(animal).then(({ breeds: apiBreeds }) => {
         const breedStrings = apiBreeds.map(({ name }) => name);
         setBreeds(breedStrings);
+        // eslint-disable-next-line
       }, console.error);
     },
     // useEffect hook will run only once if it has

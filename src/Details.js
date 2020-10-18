@@ -22,6 +22,7 @@ class Details extends React.Component {
         breed: animal.breeds.primary,
         loading: false,
       });
+      // eslint-disable-next-line
     }, console.error);
   }
 
