@@ -4,7 +4,7 @@ import SearchParams from './SearchParams';
 import { Router } from '@reach/router';
 import Details from './Details';
 import ThemeContext from './ThemeContext';
-import NavBar from '../NavBar';
+import NavBar from './NavBar';
 
 // <React.StringMode> will restrict the use
 // of older or unstable api.
