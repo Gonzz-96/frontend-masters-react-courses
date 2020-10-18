@@ -1,6 +1,5 @@
 import React, { useState, lazy, Suspense } from 'react';
 import { render } from 'react-dom';
-import SearchParams from './SearchParams';
 import { Link, Router } from '@reach/router';
 import ThemeContext from './ThemeContext';
 
@@ -9,6 +8,7 @@ import ThemeContext from './ThemeContext';
 // component is needed by the app
 // Dynamic import! Javascript concept.
 const Details = lazy(() => import('./Details'));
+const SearchParams = lazy(() => import('./SearchParams'));
 
 // The Suspense component is a kind of placeholder
 // that will display a fallback until the real
