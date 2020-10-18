@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { render } from 'react-dom';
 import SearchParams from './SearchParams';
 import { Link, Router } from '@reach/router';
-import Details from './Details';
 import ThemeContext from './ThemeContext';
+
+// this will create a placeholder component
+// and it will be loaded until the actual
+// component is needed by the app
+// Dynamic import! Javascript concept.
+const Details = lazy(() => import('./Details'));
+
+// The Suspense component is a kind of placeholder
+// that will display a fallback until the real
+// component gets load.
 
 // <React.StringMode> will restrict the use
 // of older or unstable api.
@@ -18,10 +27,12 @@ const App = () => {
         <header>
           <Link to="/">Adopt Me</Link>
         </header>
-        <Router>
-          <SearchParams path="/" />
-          <Details path="/details/:id" />
-        </Router>
+        <Suspense fallback={<h1>Loading route... </h1>}>
+          <Router>
+            <SearchParams path="/" />
+            <Details path="/details/:id" />
+          </Router>
+        </Suspense>
       </div>
     </ThemeContext.Provider>
   );
