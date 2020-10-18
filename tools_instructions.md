@@ -169,3 +169,32 @@ We are going to use `Reach Router` beacuse it handles a lot of accessibility iss
 ## Configure experimental features with Babel
 
 - Run the command: `npm install -D babel-eslint @babel/core @babel/preset-env @babel/plugin-proposal-class-properties @babel/preset-react`
+
+## Configuring Emotion library
+
+Emotion is a library that allows you to have CSS in you Javascript code (very controversial).
+When built, it will create and manage the separate CSS files.
+
+- Run the command: `npm install @emotion/core @emotion/babel-preset-css-prop`
+
+Now you can add CSS directly to the react components:
+
+- One final step is to overwrite the `.babelrc` with the next content:
+
+```
+{
+  "presets": [
+    "@babel/preset-react",
+    "@babel/preset-env",
+    [
+      "@emotion/babel-preset-css-prop",
+      {
+        "sourceMap": false
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ]
+}
+```
