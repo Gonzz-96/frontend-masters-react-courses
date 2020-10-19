@@ -169,3 +169,16 @@ We are going to use `Reach Router` beacuse it handles a lot of accessibility iss
 ## Configure experimental features with Babel
 
 - Run the command: `npm install -D babel-eslint @babel/core @babel/preset-env @babel/plugin-proposal-class-properties @babel/preset-react`
+
+## Add typescript
+
+- Run the command: `npm typescript`
+- Then, run the command: `npx tsc --init` (this will start a typescript project for us)
+- In the new `tsconfig.json` change `target` to `ES2019`.
+- Uncomment the line `"jsx": "react"`
+- `"strict"` should always be true.
+
+Since React is not a library written in TypeScript, other people create libraries
+to enable types in React while working in TypeScript.
+
+- Run a new command: `npm install -D @types/react @types/react-dom @types/reach__router`
