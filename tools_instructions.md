@@ -182,3 +182,29 @@ Since React is not a library written in TypeScript, other people create librarie
 to enable types in React while working in TypeScript.
 
 - Run a new command: `npm install -D @types/react @types/react-dom @types/reach__router`
+
+## Migrate from ESLint to TSLint
+
+- Run the command: `npm uninstall eslint babel-eslint eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks`
+- Run comand: `npm install -D tslint tslint-react tslint-config-prettier`
+- Drop eslint config
+- Create a new file `tslint.js` and fill it with this content:
+
+```
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-rect",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "ordered-import": false,
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "jsx-no-lambda": false,
+    "member-ordering": false
+  }
+}
+```
+
+- Install the `TSLint` plugin by Microsoft.
