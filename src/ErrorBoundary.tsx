@@ -1,28 +1,30 @@
 // mostly code from react.js/docs/error-boundaries.html
 
-import React, { Component } from 'react';
+import React, { Component, ErrorInfo } from 'react';
 import { Link, Redirect } from '@reach/router';
 
 // error boundaries are not possible with hooks
 // they always need to be a class cpomonents.
 class ErrorBoundary extends Component {
-  state = {
+  public state = {
     hasError: false,
+    redirect: false
   };
 
-  static getDerivedStateFromError() {
+  public static getDerivedStateFromError() {
     return {
       hasError: true,
+      redirect: false
     };
   }
 
-  componentDidCatch(error, info) {
+  public componentDidCatch(error: Error, info: ErrorInfo) {
     // the error should be also sent to the logging service
     console.error('ErrorBoundary caught an error', error, info);
   }
 
   // will run everytime it gets new state or new props
-  componentDidUpdate() {
+  public componentDidUpdate() {
     if (this.state.hasError) {
       setTimeout(
         () =>
@@ -34,7 +36,7 @@ class ErrorBoundary extends Component {
     }
   }
 
-  render() {
+  public render() {
     if (this.state.redirect) {
       return <Redirect to="/" />;
     }
