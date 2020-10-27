@@ -169,3 +169,10 @@ We are going to use `Reach Router` beacuse it handles a lot of accessibility iss
 ## Configure experimental features with Babel
 
 - Run the command: `npm install -D babel-eslint @babel/core @babel/preset-env @babel/plugin-proposal-class-properties @babel/preset-react`
+
+## Use Redux in React
+
+Redux is a framework-agnostic tool. This means that it can be used with React, Ember, Angular, etc. (not sure if Vue.js)
+It's a small library. It it in 50 lines of code.
+
+- Run the command: `npm install redux react-redux`
