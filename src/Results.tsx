@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
+import { Animal } from '@frontendmasters/pet';
 import Pet from './Pet';
 
-const Results = ({ pets }) => (
+interface IProps {
+  pets: Animal[];
+}
+
+const Results: FunctionComponent<IProps> = ({ pets }) => (
   <div className="search">
     {pets.length === 0 ? (
       <h1>No Pets Found</h1>
@@ -14,7 +19,7 @@ const Results = ({ pets }) => (
           key={pet.id}
           media={pet.photos}
           location={`${pet.contact.address.city}, ${pet.contact.address.state}`}
-          id={pet.id}
+          id={pet.id.toString()}
         />
       ))
     )}
