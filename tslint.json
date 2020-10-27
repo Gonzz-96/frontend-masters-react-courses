@@ -1,7 +1,7 @@
 {
   "extends": [
     "tslint:recommended", 
-    "tslint-rect", 
+    "tslint-react", 
     "tslint-config-prettier"
   ],
   "rules": {
