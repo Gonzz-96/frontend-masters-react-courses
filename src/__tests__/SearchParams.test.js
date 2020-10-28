@@ -43,3 +43,132 @@ test('SearchParams_CheckButtonClick', async () => {
   expect(pet.animals).toHaveBeenCalled();
   expect(searchResults.children.length).toEqual(_dogs.animals.length);
 });
+
+test('Dont know xd', async () => {
+  const { container } = render(<SearchParams />);
+
+  expect(container.firstChild).toMatchInlineSnapshot(`
+    <div
+      class="search-params"
+    >
+      <form>
+        <label
+          for="location"
+        >
+          Location
+          <input
+            id="location"
+            placeholder="Location"
+            value="Seattle, WA"
+          />
+        </label>
+        <label
+          for="use-dropdown-animal"
+        >
+          Animal
+          <select
+            data-testid="use-dropdown-animal"
+            id="use-dropdown-animal"
+          >
+            <option>
+              All
+            </option>
+            <option
+              value="dog"
+            >
+              dog
+            </option>
+            <option
+              value="cat"
+            >
+              cat
+            </option>
+            <option
+              value="bird"
+            >
+              bird
+            </option>
+          </select>
+        </label>
+        <label
+          for="use-dropdown-breed"
+        >
+          Breed
+          <select
+            data-testid="use-dropdown-breed"
+            id="use-dropdown-breed"
+          >
+            <option>
+              All
+            </option>
+            <option
+              value="Bichon Frise"
+            >
+              Bichon Frise
+            </option>
+            <option
+              value="Bolognese"
+            >
+              Bolognese
+            </option>
+            <option
+              value="Coton de Tulear"
+            >
+              Coton de Tulear
+            </option>
+            <option
+              value="Havanese"
+            >
+              Havanese
+            </option>
+            <option
+              value="Maltese"
+            >
+              Maltese
+            </option>
+          </select>
+        </label>
+        <label
+          for="theme"
+        >
+          Theme
+          <select>
+            <option
+              value="peru"
+            >
+              Peru
+            </option>
+            <option
+              value="darkblue"
+            >
+              Dark Blue
+            </option>
+            <option
+              value="mediumorchid"
+            >
+              Medium Orchid
+            </option>
+            <option
+              value="chartreuse"
+            >
+              Chartreuse
+            </option>
+          </select>
+        </label>
+        <button
+          style="background-color: green;"
+        >
+          Submit
+        </button>
+      </form>
+      <div
+        class="search"
+        data-testid="search-results"
+      >
+        <h1>
+          No Pets Found
+        </h1>
+      </div>
+    </div>
+  `);
+});
