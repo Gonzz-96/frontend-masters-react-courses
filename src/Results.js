@@ -2,7 +2,7 @@ import React from 'react';
 import Pet from './Pet';
 
 const Results = ({ pets }) => (
-  <div className="search">
+  <div data-testid="search-results" className="search">
     {pets.length === 0 ? (
       <h1>No Pets Found</h1>
     ) : (
