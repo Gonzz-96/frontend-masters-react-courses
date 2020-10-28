@@ -169,3 +169,9 @@ We are going to use `Reach Router` beacuse it handles a lot of accessibility iss
 ## Configure experimental features with Babel
 
 - Run the command: `npm install -D babel-eslint @babel/core @babel/preset-env @babel/plugin-proposal-class-properties @babel/preset-react`
+
+## Testing
+
+To do some testing, do the following:
+
+- Run the command: `npm install -D jest react-testing-library`
